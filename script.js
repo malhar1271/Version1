@@ -158,7 +158,7 @@ document.addEventListener('mouseup', () => {
 // Animate function
 function animate() {
     const centerX = canvas.width / 2;
-    const centerY = canvas.height / 2;
+    const centerY = canvas.height / 2 + 80;
 
     frames.forEach(f1 => {
         // Determine scale based on distance from center
@@ -207,9 +207,11 @@ function animate() {
             f1.y = mouseY - offsetY;
         }
 
-        // Keep inside canvas
-        f1.x = Math.max(0, Math.min(canvas.width - fWidth, f1.x));
-        f1.y = Math.max(0, Math.min(canvas.height - fHeight, f1.y));
+        const topOffset = 60; // pixels from the top
+
+// Keep inside canvas (replace your current lines)
+f1.x = Math.max(0, Math.min(canvas.width - fWidth, f1.x));
+f1.y = Math.max(topOffset, Math.min(canvas.height - fHeight, f1.y));
 
         f1.style.left = f1.x + 'px';
         f1.style.top = f1.y + 'px';
