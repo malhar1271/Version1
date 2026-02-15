@@ -102,7 +102,7 @@ for (let i = 0; i < totalFrames; i++) {
     frame.classList.add('frame');
 
     const img = document.createElement('img');
-img.src = `images/${metadata[i].file}`; // uses the file name from metadata
+img.src = `Images/${metadata[i].file}`; // uses the file name from metadata
 frame.appendChild(img);
     document.body.appendChild(frame);
 
